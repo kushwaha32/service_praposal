@@ -1,16 +1,11 @@
-import { Checkbox, TextField } from "material-ui";
-import AnimRemoval from "./AnimRemoval";
-import Heading from "./Heading";
-import NoLabelForm from "./NoLabelForm";
+import { RaisedButton } from "material-ui";
+import AnimRemoval from "../AnimRemoval";
+import Heading from "../Heading";
 
-const IndustrialForm = () => {
+const StepFormTwo = ({nexStep, prevStep}) => {
   return (
-    <div className="industrial">
-      <Heading
-        heading="Industrial/Commercial
-Service Details"
-      />
-
+    <div className="step-form-holder">
+      <Heading heading="Industrial/Commercial Service Details" />
       <Heading heading="Pest Covered" />
       <p>
         <span>
@@ -26,7 +21,6 @@ Service Details"
           <input type="checkbox" style={{ marginRight: ".8rem" }} />
         </span>
       </p>
-
       <AnimRemoval
         heading="Animal Removal, /Wild Life,"
         style={{ marginTop: ".2rem" }}
@@ -79,46 +73,25 @@ Service Details"
           />
         </span>
       </p>
-      <Heading heading="Pest Control Tools and Devices" />
-      <div
-        className="name-store"
-        style={style}
-      >
-        <NoLabelForm type="text" placeholder="Insect Monitors" />
-        <NoLabelForm type="text" placeholder="Sticky Traps" />
-      </div>
-      <div
-        className="name-store"
-        style={style}
-      >
-        <NoLabelForm type="text" placeholder="Insect Monitors" />
-        <NoLabelForm type="text" placeholder="Sticky Traps" />
-      </div>
-      <div
-        className="name-store"
-        style={style}
-      >
-        <NoLabelForm type="text" placeholder="Insect Monitors" />
-        <NoLabelForm type="text" placeholder="Sticky Traps" />
-      </div>
-      <div
-        className="name-store"
-        style={style}
-      >
-        <NoLabelForm type="text" placeholder="Insect Monitors" />
-        <NoLabelForm type="text" placeholder="Sticky Traps" />
-      </div>
-      <div
-        className="name-store"
-        style={style}
-      >
-        <NoLabelForm type="text" placeholder="Insect Monitors" />
-        <NoLabelForm type="text" placeholder="Sticky Traps" />
+      <div style={{ width: "100%", textAlign: "right" }}>
+        <RaisedButton
+          label="Continue"
+          primary={true}
+          style={style}
+          onClick={() => nexStep()}
+        />
+        <RaisedButton
+          label="back"
+          style={style}
+          style={{marginLeft:"1rem"}}
+          onClick={() => prevStep()}
+        />
       </div>
     </div>
   );
 };
+
 const style = {
-  padding: "0 .3rem", marginBottom: "1rem"
+    marginTop: "2rem"
 }
-export default IndustrialForm;
+export default StepFormTwo;

@@ -1,10 +1,11 @@
 import { RaisedButton, TextField } from "material-ui";
-import PrimaryField from "../PrimaryField";
+import Heading from "../Heading";
 import TextFieldInput from "./TextFieldInput";
 
-const StepFormOne = () => {
+const StepFormOne = ({nexStep}) => {
   return (
     <div className="step-form-holder">
+           <Heading heading="Service Form" />
          <div className="input-wrapper">
              <TextFieldInput placeHolder="Service Name"/>
              <TextFieldInput placeHolder="Store"/>
@@ -22,7 +23,9 @@ const StepFormOne = () => {
              <TextFieldInput placeHolder="Contact"/>
              <TextFieldInput placeHolder="Telephone"/>
          </div>
-         <RaisedButton label="Continue" primary={true} style={style}/>
+         <div style={{width:"100%", textAlign:"right"}}>
+          <RaisedButton label="Continue" primary={true} style={style} onClick={()=> nexStep()}/>   
+         </div>
     </div>
   );
 };

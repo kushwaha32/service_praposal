@@ -141,3 +141,11 @@ textarea:focus{
 .input-wrapper-3{
     grid-template-columns: 2fr 1fr 1fr;
 }
+.navStyle{
+    position: absolute;
+    border: 1px solid #ddd;
+    z-index: 99999;
+}
+a{
+    text-decoration: none;
+}

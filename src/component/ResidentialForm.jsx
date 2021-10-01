@@ -39,7 +39,7 @@ const ResidentialForm = () => {
         heading="Additional Details Of Services : 
         "
       />
-      <textarea name="w3review" rows="10" cols="45"></textarea>
+      <textarea name="w3review" rows="5" cols="45"></textarea>
       <Heading
         heading="Optional Services : 
         "
